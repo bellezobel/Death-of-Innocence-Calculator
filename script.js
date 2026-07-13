@@ -198,7 +198,7 @@ function calculateWeapon(){
     //----------------------------------
 
     let damage =
-        (baseAttack + weaponAttack) * 3;
+        (baseAttack + weaponAttack) * 2;
 
     damage *= skillMultiplier;
 
