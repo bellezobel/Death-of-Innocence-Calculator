@@ -3,17 +3,25 @@
    Style.css
 ======================================= */
 
+
+/* =========================
+   GLOBAL
+========================= */
+
 *{
+
     margin:0;
     padding:0;
     box-sizing:border-box;
+
 }
+
 
 body{
 
-    background:#151515;
+    background:#0d1117;
 
-    color:#eeeeee;
+    color:#e4dfd5;
 
     font-family:Georgia, serif;
 
@@ -25,7 +33,12 @@ body{
 
 }
 
-/* ========================= */
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
 
 .container{
 
@@ -33,19 +46,24 @@ body{
 
     max-width:650px;
 
-    background:#242424;
+    background:#1b1f24;
 
-    border:2px solid #5a5a5a;
+    border:2px solid #6b6253;
 
     border-radius:0px;
 
     padding:30px;
 
-    box-shadow:0px 0px 25px rgba(0,0,0,.5);
+    box-shadow:0px 0px 25px rgba(0,0,0,.8);
 
 }
 
-/* ========================= */
+
+
+/* =========================
+   HEADINGS
+========================= */
+
 
 h1{
 
@@ -57,17 +75,40 @@ h1{
 
 }
 
+
+
 h2{
 
     text-align:center;
 
     margin-bottom:20px;
 
-    color:#cfcfcf;
+    color:#d6d0c4;
 
 }
 
-/* ========================= */
+
+
+h3{
+
+    margin-top:25px;
+
+    margin-bottom:10px;
+
+    color:#d2b46d;
+
+    border-bottom:1px solid #62594b;
+
+    padding-bottom:5px;
+
+}
+
+
+
+/* =========================
+   TABS
+========================= */
+
 
 .tabs{
 
@@ -79,17 +120,19 @@ h2{
 
 }
 
+
+
 .tabButton{
 
     flex:1;
 
     padding:14px;
 
-    background:#353535;
+    background:#252a30;
 
-    color:white;
+    color:#e4dfd5;
 
-    border:none;
+    border:1px solid #665c4c;
 
     border-radius:0px;
 
@@ -101,19 +144,30 @@ h2{
 
 }
 
+
+
 .tabButton:hover{
 
-    background:#505050;
+    background:#3b424b;
 
 }
+
+
 
 .tabButton.active{
 
-    background:#8b1e1e;
+    background:#7a211d;
+
+    color:#f0dfb0;
 
 }
 
-/* ========================= */
+
+
+/* =========================
+   CONTENT
+========================= */
+
 
 .tabContent{
 
@@ -121,13 +175,20 @@ h2{
 
 }
 
+
+
 .hidden{
 
     display:none;
 
 }
 
-/* ========================= */
+
+
+/* =========================
+   INPUTS
+========================= */
+
 
 label{
 
@@ -139,9 +200,11 @@ label{
 
     font-weight:bold;
 
+    color:#d8d2c5;
+
 }
 
-/* ========================= */
+
 
 input{
 
@@ -151,17 +214,17 @@ input{
 
     font-size:18px;
 
-    background:#1d1d1d;
+    background:#11151a;
 
-    color:white;
+    color:#eeeeee;
 
-    border:1px solid #666;
+    border:1px solid #62594b;
 
     border-radius:0px;
 
 }
 
-/* ========================= */
+
 
 select{
 
@@ -171,17 +234,22 @@ select{
 
     font-size:18px;
 
-    background:#1d1d1d;
+    background:#11151a;
 
-    color:white;
+    color:#eeeeee;
 
-    border:1px solid #666;
+    border:1px solid #62594b;
 
     border-radius:0px;
 
 }
 
-/* ========================= */
+
+
+/* =========================
+   DOUBLE INPUT
+========================= */
+
 
 .doubleInput{
 
@@ -191,13 +259,20 @@ select{
 
 }
 
+
+
 .doubleInput div{
 
     flex:1;
 
 }
 
-/* ========================= */
+
+
+/* =========================
+   BUTTONS
+========================= */
+
 
 button{
 
@@ -209,11 +284,11 @@ button{
 
     font-size:18px;
 
-    background:#8b1e1e;
+    background:#6e241f;
 
-    color:white;
+    color:#f0dfb0;
 
-    border:none;
+    border:1px solid #a07b45;
 
     border-radius:0px;
 
@@ -223,13 +298,20 @@ button{
 
 }
 
+
+
 button:hover{
 
-    background:#b52d2d;
+    background:#91352a;
 
 }
 
-/* ========================= */
+
+
+/* =========================
+   RESULT
+========================= */
+
 
 .result{
 
@@ -237,9 +319,9 @@ button:hover{
 
     padding:20px;
 
-    background:#1d1d1d;
+    background:#101318;
 
-    border:2px solid #5b5b5b;
+    border:2px solid #8c7445;
 
     border-radius:0px;
 
@@ -250,6 +332,8 @@ button:hover{
     font-weight:bold;
 
 }
+
+
 
 .result span{
 
@@ -263,9 +347,15 @@ button:hover{
 
 }
 
-/* ========================= */
+
+
+/* =========================
+   MOBILE
+========================= */
+
 
 @media(max-width:700px){
+
 
     body{
 
@@ -273,11 +363,15 @@ button:hover{
 
     }
 
+
+
     .container{
 
         padding:20px;
 
     }
+
+
 
     .tabs{
 
@@ -285,10 +379,13 @@ button:hover{
 
     }
 
+
+
     .doubleInput{
 
         flex-direction:column;
 
     }
+
 
 }
