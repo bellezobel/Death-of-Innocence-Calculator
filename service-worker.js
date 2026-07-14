@@ -7,8 +7,8 @@ const FILES_TO_CACHE = [
     "./script.js",
 	"./images/background.webp",
 	"./images/header.png",
-	"./images/icon-small.png",
-	"./images/icon-big.png"
+	"./images/icon-192.png",
+	"./images/icon-512.png"
 ];
 
 // Installieren
