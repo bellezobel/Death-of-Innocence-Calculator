@@ -135,7 +135,7 @@ function calculateWeapon(){
 
 
     let damage =
-        (baseAttack + weaponAttack) * 1;
+        (baseAttack + weaponAttack) * 2;
 
 
     damage *= skillMultiplier;
@@ -231,7 +231,7 @@ const spells = {
 
         formula:function(mAttack){
 
-            return 25 + (mAttack * 2);
+            return 40 + (mAttack * 2);
 
         }
 
