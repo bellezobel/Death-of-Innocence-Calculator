@@ -191,10 +191,6 @@ function updateItemPreview(type){
 
 
         document
-        .getElementById("weaponName")
-        .textContent =
-
-        document
         .getElementById("weaponSelect")
         .value;
 
@@ -236,16 +232,11 @@ function updateItemPreview(type){
         ];
 
 
-
         document
         .getElementById("spellImage")
         .src = spell.image;
 
 
-
-        document
-        .getElementById("spellName")
-        .textContent =
 
         document
         .getElementById("spellSelect")
