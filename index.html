@@ -1,354 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Death of the Innocent Companion</title>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Death of the Innocent Companion</title>
-
-    <link rel="stylesheet" href="style.css">
-	
-	<link rel="manifest" href="manifest.json">
-	<meta name="theme-color" content="#3b241b">
-	<link rel="icon" href="images/icon-192.png">
-
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#3b241b">
+<link rel="icon" href="images/icon-small.png">
 </head>
 
 <body>
 
 <div class="container">
 
-    <img src="images/header.png" class="headerImage">
+<img src="images/header.png" class="headerImage">
 
+<div class="tabs">
+    <button class="tabButton active" onclick="showTab('weapon', this)">Weapon</button>
+    <button class="tabButton" onclick="showTab('spell', this)">Spell</button>
+</div>
 
-    <div class="tabs">
+<div id="weapon" class="tabContent">
 
-        <button class="tabButton active" onclick="showTab('weapon')">
-            Weapon
-        </button>
+<h2>Weapon Calculator</h2>
 
-        <button class="tabButton" onclick="showTab('spell')">
-            Spell
-        </button>
+<label>Weapon</label>
+
+<div class="itemCard">
+
+    <img id="weaponImage"
+         class="itemPreview"
+         src="images/placeholder.png">
+
+    <div class="itemContent">
+
+        <select id="weaponSelect"></select>
+
+        <div id="weaponInfo"
+             class="itemInfo">
+        </div>
 
     </div>
-
-
-
-    <!-- WEAPON -->
-
-    <div id="weapon" class="tabContent">
-
-
-        <h2>Weapon Calculator</h2>
-
-
-        <label>Weapon</label>
-
-        <select id="weaponSelect">
-
-            <option value="Rusty Pipe">Rusty Pipe</option>
-            <option value="Black Steel">Black Steel</option>
-
-        </select>
-
-
-        <label>Base Damage</label>
-
-        <input id="weaponBaseAttack" type="number" placeholder="0">
-
-
-
-        <h3>Modifier</h3>
-
-
-        <label>Skill</label>
-
-        <select id="weaponSkill">
-
-            <option value="None">None</option>
-            <option value="Adrenalinrush I">Adrenalinrush I</option>
-            <option value="Adrenalinrush II">Adrenalinrush II</option>
-
-        </select>
-
-
-        <label>Rev</label>
-
-        <select id="weaponRev">
-
-            <option value="1">None</option>
-            <option value="1.3">Rev 1</option>
-            <option value="1.5">Rev 2</option>
-
-        </select>
-
-
-        <label>Crit</label>
-
-        <select id="weaponCrit">
-
-            <option value="1">No</option>
-            <option value="2">Yes</option>
-
-        </select>
-
-
-
-        <h3>Target</h3>
-
-
-        <div class="doubleInput">
-
-
-            <div>
-
-                <label>Resistance</label>
-
-                <select id="weaponResistance">
-
-                    <option value="0">0%</option>
-                    <option value="10">10%</option>
-                    <option value="15">15%</option>
-                    <option value="20">20%</option>
-
-                </select>
-
-            </div>
-
-
-
-            <div>
-
-                <label>Weakness</label>
-
-                <select id="weaponWeakness">
-
-                    <option value="0">0%</option>
-                    <option value="10">10%</option>
-                    <option value="15">15%</option>
-                    <option value="20">20%</option>
-
-                </select>
-
-            </div>
-
-
-        </div>
-
-
-
-        <button onclick="calculateWeapon()">
-            Calculate
-        </button>
-
-
-
-        <div class="result">
-
-            Final Damage
-
-            <span id="weaponResult">
-                0
-            </span>
-
-        </div>
-
-
-    </div>
-
-
-
-
-
-
-    <!-- SPELL -->
-
-
-    <div id="spell" class="tabContent hidden">
-
-
-        <h2>Spell Calculator</h2>
-
-
-
-        <label>Spell</label>
-
-        <select id="spellSelect">
-
-            <option value="Hurting">Hurting</option>
-            <option value="Combustion">Combustion</option>
-
-        </select>
-
-
-
-        <label>Base Magic Attack</label>
-
-        <input id="spellBaseAttack" type="number" placeholder="0">
-
-
-
-        <label>Accessory</label>
-
-        <select id="spellAccessory">
-
-            <option value="None">None</option>
-            <option value="Chac Chac">Chac Chac</option>
-            <option value="Molded Doll">Molded Doll</option>
-
-        </select>
-
-
-
-        <h3>Modifier</h3>
-
-
-
-        <label>Skill</label>
-
-        <select id="spellSkill">
-
-            <option value="None">None</option>
-            <option value="La Danse Macabre I">La Danse Macabre I</option>
-            <option value="La Danse Macabre II">La Danse Macabre II</option>
-
-        </select>
-
-
-
-        <label>Rev</label>
-
-        <select id="spellRev">
-
-            <option value="1">None</option>
-            <option value="1.2">Rev 1</option>
-            <option value="1.4">Rev 2</option>
-
-        </select>
-
-
-
-        <label>Crit</label>
-
-        <select id="spellCrit">
-
-            <option value="1">None</option>
-            <option value="1.7">Critical</option>
-
-        </select>
-
-
-
-
-
-        <h3>Target</h3>
-
-
-        <div class="doubleInput">
-
-
-            <div>
-
-                <label>Resistance</label>
-
-                <select id="spellResistance">
-
-                    <option value="0">0%</option>
-                    <option value="10">10%</option>
-                    <option value="15">15%</option>
-                    <option value="20">20%</option>
-
-                </select>
-
-            </div>
-
-
-
-            <div>
-
-                <label>Weakness</label>
-
-                <select id="spellWeakness">
-
-                    <option value="0">0%</option>
-                    <option value="10">10%</option>
-                    <option value="15">15%</option>
-                    <option value="20">20%</option>
-
-                </select>
-
-            </div>
-
-
-        </div>
-
-
-
-
-        <button onclick="calculateSpell()">
-            Calculate
-        </button>
-
-
-
-
-        <div class="result">
-
-            Final Damage
-
-            <span id="spellResult">
-                0
-            </span>
-
-        </div>
-
-
-
-    </div>
-
 
 </div>
 
+<label>Base Damage</label>
+<input id="weaponBaseAttack" type="number" placeholder="0">
 
+<h3>Modifier</h3>
 
-<script src="script.js"></script>
+<label>Skill</label>
+<select id="weaponSkill"></select>
 
-<script>
-if ("serviceWorker" in navigator) {
-    window.addEventListener("load", async () => {
+<label>Rev</label>
+<select id="weaponRev">
+<option value="1">None</option>
+<option value="1.3">Rev 1</option>
+<option value="1.5">Rev 2</option>
+</select>
 
-        try {
-            const registration = await navigator.serviceWorker.register("./service-worker.js");
+<label>Crit</label>
+<select id="weaponCrit">
+<option value="1">No</option>
+<option value="2">Yes</option>
+</select>
 
-            registration.addEventListener("updatefound", () => {
+<h3>Target</h3>
 
-                const worker = registration.installing;
+<div class="doubleInput">
 
-                worker.addEventListener("statechange", () => {
+<div>
+<label>Resistance</label>
+<select id="weaponResistance">
+<option value="0">0%</option>
+<option value="10">10%</option>
+<option value="15">15%</option>
+<option value="20">20%</option>
+</select>
+</div>
 
-                    if (
-                        worker.state === "installed" &&
-                        navigator.serviceWorker.controller
-                    ) {
-                        window.location.reload();
-                    }
+<div>
+<label>Weakness</label>
+<select id="weaponWeakness">
+<option value="0">0%</option>
+<option value="10">10%</option>
+<option value="15">15%</option>
+<option value="20">20%</option>
+</select>
+</div>
 
-                });
+</div>
 
-            });
+<h3>Status Effects</h3>
+<div id="statusContainer" class="iconGrid"></div>
 
-        } catch (err) {
-            console.error("Service Worker konnte nicht registriert werden:", err);
-        }
+<h3>Buffs</h3>
+<div id="buffContainer" class="iconGrid"></div>
 
-    });
-}
-</script>
+<button onclick="calculateWeapon()">Calculate</button>
 
+<div class="result">
+Final Damage
+<span id="weaponResult">0</span>
+</div>
+
+</div>
+
+<div id="spell" class="tabContent hidden">
+
+<h2>Spell Calculator</h2>
+
+<label>Spell</label>
+
+<div class="itemCard">
+
+<img id="spellImage"
+     class="itemPreview"
+     src="images/placeholder.png">
+
+<div class="itemContent">
+
+<select id="spellSelect"></select>
+
+<div id="spellInfo"
+     class="itemInfo"></div>
+
+</div>
+
+</div>
+
+<label>Base Magic Attack</label>
+<input id="spellBaseAttack" type="number" placeholder="0">
+
+<h3>Accessories</h3>
+
+<div class="accessoryGrid">
+
+<div class="accessorySlot">
+<img id="accessoryImage1" class="itemPreview small" src="images/placeholder.png">
+<select id="spellAccessory1"></select>
+</div>
+
+<div class="accessorySlot">
+<img id="accessoryImage2" class="itemPreview small" src="images/placeholder.png">
+<select id="spellAccessory2"></select>
+</div>
+
+<div class="accessorySlot">
+<img id="accessoryImage3" class="itemPreview small" src="images/placeholder.png">
+<select id="spellAccessory3"></select>
+</div>
+
+</div>
+
+<!-- Remaining spell controls can stay as in your current version -->
+</div>
+
+<h2>Coin Flip</h2>
+
+<button onclick="coinFlip()">Flip Coin</button>
+
+<div class="coinContainer">
+<img id="coinResult"
+     src="images/coinhead.gif"
+     class="coinImage">
+</div>
+
+</div>
+
+<script src="js/database-weapons.js"></script>
+<script src="js/database-spells.js"></script>
+<script src="js/database-accessories.js"></script>
+<script src="js/database-skills.js"></script>
+<script src="js/database-status.js"></script>
+<script src="js/database-buffs.js"></script>
+<script src="js/script.js"></script>
 
 </body>
-
 </html>
