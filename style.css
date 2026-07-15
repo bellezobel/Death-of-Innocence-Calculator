@@ -808,9 +808,16 @@ body{
 
 .tabs{
 
-
+	display:flex;
     flex-direction:row;
+	width:100%
 
+
+}
+
+.tabButton{
+
+    width:50%;
 
 }
 
