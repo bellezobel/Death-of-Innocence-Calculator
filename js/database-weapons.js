@@ -17,7 +17,7 @@ hitBonus:+3
 image:"images/blacksteel.png",
 attack:15,
 damageType:"Slashing",
-effect:"20% Crit",
+effect:"10% Crit",
 hitBonus:+0
 
 }
