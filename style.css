@@ -777,6 +777,8 @@ button:hover{
 
     margin-top:8px;
 
+}
+
 
 .itemTop{
 
@@ -791,13 +793,6 @@ button:hover{
 }
 
 
-.itemTop select{
-
-    flex:1;
-
-}
-
-
 
 /* =========================
         MOBILE
@@ -807,94 +802,306 @@ button:hover{
 @media(max-width:700px){
 
 
-
 body{
 
-
-    padding:15px;
-
+    padding:5px;
 
 }
-
 
 
 
 .container{
 
+    width:100%;
 
-    padding:20px;
+    max-width:none;
 
+    padding:15px;
 
 }
 
 
 
+/* =========================
+        TABS
+========================= */
 
 
 .tabs{
 
-	display:flex;
-    flex-direction:row;
-	width:100%
+    display:grid;
 
+    grid-template-columns:1fr 1fr;
+
+    gap:8px;
+
+    margin-bottom:15px;
 
 }
+
 
 .tabButton{
 
-    width:50%;
+    width:100%;
+
+    padding:10px;
+
+    font-size:15px;
 
 }
 
 
+
+/* =========================
+        HEADINGS
+========================= */
+
+
+h1{
+
+    font-size:24px;
+
+}
+
+
+h2{
+
+    font-size:20px;
+
+    margin-bottom:15px;
+
+}
+
+
+h3{
+
+    margin-top:18px;
+
+    margin-bottom:8px;
+
+}
+
+
+
+/* =========================
+        INPUTS
+========================= */
+
+
+input,
+select{
+
+    padding:8px;
+
+    font-size:16px;
+
+}
+
+
+
+label{
+
+    margin-top:10px;
+
+    margin-bottom:4px;
+
+}
+
+
+
+/* =========================
+        LAYOUT
+========================= */
 
 
 .doubleInput{
 
-
     flex-direction:row;
 
+    gap:10px;
 
 }
 
 
+.tripleInput{
+
+    gap:8px;
+
+}
+
+
+
+.doubleInput > div,
+.tripleInput > div{
+
+    min-width:0;
+
+}
+
+
+
+/* =========================
+        ICONS
+========================= */
 
 
 .iconContainer{
 
+    justify-content:flex-start;
 
-    justify-content:center;
-
+    gap:8px;
 
 }
 
+
+.statusIcon,
+.buffIcon{
+
+    width:40px;
+
+    height:40px;
+
+}
+
+
+
+/* =========================
+        ITEMS
+========================= */
+
+
+.itemDisplay{
+
+    gap:8px;
+
+}
+
+
+.itemPreview{
+
+    width:35px;
+
+    height:35px;
+
+}
+
+
+
+/* =========================
+        BUTTONS
+========================= */
+
+
+button{
+
+    margin-top:15px;
+
+    padding:10px;
+
+    font-size:16px;
+
+}
+
+
+
+/* =========================
+        RESULTS
+========================= */
+
+
+.result{
+
+    margin-top:20px;
+
+    padding:15px;
+
+}
+
+
+.result span{
+
+    font-size:28px;
+
+}
+
+
+
+/* =========================
+        COIN FLIP
+========================= */
+
+
+.coinArea{
+
+    gap:10px;
+
+}
+
+
 .coinArea img{
 
-    width:90px;
+    width:80px;
+
+}
+
+
+.coinButtons{
+
+    gap:8px;
 
 }
 
 
 .coinButtons button{
 
-    font-size:14px;
+    font-size:13px;
+
+    padding:10px 5px;
 
 }
 
 
 
-.statusIcon,
-.buffIcon{
+/* =========================
+        SMALL SCREENS
+========================= */
 
 
-    width:44px;
+@media(max-width:400px){
 
 
-    height:44px;
+    .container{
+
+        padding:10px;
+
+    }
+
+
+    .tabButton{
+
+        font-size:14px;
+
+        padding:8px;
+
+    }
+
+
+    .doubleInput{
+
+        gap:5px;
+
+    }
+
+
+    input,
+    select{
+
+        font-size:14px;
+
+    }
 
 
 }
-
 
 
 }
