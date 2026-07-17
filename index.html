@@ -14,7 +14,7 @@
 
 <meta name="theme-color" content="#3b241b">
 
-<link rel="icon" href="images/icon-192.png">
+<link rel="icon" href="images/icon-small.png">
 
 </head>
 
@@ -51,6 +51,14 @@
 
 <button 
 class="tabButton active"
+onclick="showTab('character',this)">
+
+Character
+
+</button>
+
+<button 
+class="tabButton"
 onclick="showTab('weapon',this)">
 
 Weapon
@@ -77,18 +85,228 @@ Firearm
 
 </div>
 
+<!-- =========================
+        CHARACTER
+========================= -->
+
+<div id="character" class="tabContent">
+
+<h2>Character</h2>
+
+<h3>General</h3>
+
+<div class="characterGrid">
+<label>Name</label>
+<input id="charName" type="text">
+
+<label>Phobia</label>
+<select id="charPhobia"></select>
+
+<label>Soul</label>
+<select id="charSoul"></select>
+</div>
 
 
+<h3>Resources</h3>
+
+<div class="tripleInput">
+
+<div>
+<label>Body</label>
+<input id="charBody" type="number">
+</div>
+
+<div>
+<label>Mind</label>
+<input id="charMind" type="number">
+</div>
+
+<div>
+<label>Hunger</label>
+<input id="charHunger" type="number">
+</div>
+
+</div>
+
+
+<h3>Attributes</h3>
+
+<div class="doubleInput">
+
+<div>
+<label>Determination</label>
+<input id="determination" type="number">
+
+<label>Cognition</label>
+<input id="cognition" type="number">
+
+<label>Vitality</label>
+<input id="vitality" type="number">
+
+<label>Awareness</label>
+<input id="awareness" type="number">
+</div>
+
+
+<div>
+<label>Enlightenment</label>
+<input id="enlightenment" type="number">
+
+<label>Rhetoric</label>
+<input id="rhetoric" type="number">
+
+<label>Brawn</label>
+<input id="brawn" type="number">
+
+<label>Finesse</label>
+<input id="finesse" type="number">
+</div>
+</div>
+<h3>Combat Skills</h3>
+
+<div class="doubleInput">
+
+<div>
+<label>Agility</label>
+<input id="agility" type="number">
+
+<label>Attack</label>
+<input id="attack" type="number">
+
+<label>M.Attack</label>
+<input id="mAttack" type="number">
+</div>
+
+
+<div>
+<label>M.Defense</label>
+<input id="mDefense" type="number">
+
+<label>Defense</label>
+<input id="defense" type="number">
+</div>
+
+</div>
+
+
+<h3>Resistances</h3>
+
+<div class="doubleInput">
+
+<div>
+
+<label>Blunt</label>
+<input id="bluntResistance" type="number">
+
+<label>Slashing</label>
+<input id="slashingResistance" type="number">
+
+<label>Piercing</label>
+<input id="piercingResistance" type="number">
+
+</div>
+
+
+<div>
+
+<label>Fire</label>
+<input id="fireResistance" type="number">
+
+<label>Otherworldly</label>
+<input id="otherworldlyResistance" type="number">
+
+</div>
+
+</div>
+
+
+<h3>Skills</h3>
+
+<div class="doubleInput">
+
+<div>
+
+<label>Skill 1</label>
+<select id="charSkill1"></select>
+
+<label>Skill 2</label>
+<select id="charSkill2"></select>
+
+<label>Skill 3</label>
+<select id="charSkill3"></select>
+
+</div>
+
+
+<div>
+
+<label>Skill 4</label>
+<select id="charSkill4"></select>
+
+<label>Skill 5</label>
+<select id="charSkill5"></select>
+
+<label>Skill 6</label>
+<select id="charSkill6"></select>
+
+</div>
+
+</div>
+
+
+<h3>Equipment</h3>
+
+<div class="doubleInput">
+
+<div>
+
+<label>Head</label>
+<select id="charHead"></select>
+
+<label>Body</label>
+<select id="charArmor"></select>
+
+<label>Weapon</label>
+<select id="charWeapon"></select>
+
+</div>
+
+<div>
+
+<label>Accessory I</label>
+<select id="charAccessory1"></select>
+
+<label>Accessory II</label>
+<select id="charAccessory2"></select>
+
+<label>Accessory III</label>
+<select id="charAccessory3"></select>
+
+
+
+</div>
+
+</div>
+
+<button onclick="saveCharacter()">
+Save Character
+</button>
+
+
+<button onclick="loadCharacter()">
+Load Character
+</button>
+
+</div>
 
 <!-- =========================
         WEAPON
 ========================= -->
 
-<div id="weapon" class="tabContent">
+<div id="weapon" class="tabContent hidden">
 
 
 <h2>Weapon Calculator</h2>
-
 
 <div class="itemDisplay">
 
@@ -731,6 +949,15 @@ class="hiddenCoin">
 
 <script src="js/database-buffs.js"></script>
 
+<script src="js/database-charskills.js"></script>
+
+<script src="js/database-phobias.js"></script>
+
+<script src="js/database-souls.js"></script>
+
+<script src="js/database-armorhead.js"></script>
+
+<script src="js/database-armorbody.js"></script>
 
 <script src="js/script.js"></script>
 
